@@ -9,6 +9,8 @@ const UserSliceData = createSlice({
     reducers: {
         logout: (state) => {
             state.token = '';
+            localStorage.clear();
+            window.location.replace("/")
         },
         login: (state, { payload }) => {
             state.token = payload.token;
@@ -30,12 +32,12 @@ const UserSliceData = createSlice({
                 state.cart[getIndex].qty -= 1;
             }
         },
-        removeQty: (state, { payload }) => {
-
+        removeProduct: (state, { payload }) => {
+            state.cart = state.cart.filter((element) => element?.id !== payload.id)
         }
     },
 });
 
-export const { logout, login, addQty, minusQty } = UserSliceData.actions;
+export const { logout, login, addQty, minusQty, removeProduct } = UserSliceData.actions;
 
 export default UserSliceData.reducer;

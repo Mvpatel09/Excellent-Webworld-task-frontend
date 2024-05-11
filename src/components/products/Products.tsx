@@ -3,7 +3,7 @@ import { DataService } from '../../service/service';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button, Card, CardContent, CardMedia, Container, FormControl, Grid, InputLabel, MenuItem, Select, SelectChangeEvent, Slider, Typography } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
-import { addQty, minusQty } from '../../redux/slice';
+import { addQty, logout, minusQty } from '../../redux/slice';
 
 const Products = () => {
     const navigate = useNavigate();
@@ -105,6 +105,9 @@ const Products = () => {
             <Typography variant="h4" gutterBottom>Cart</Typography>
             <br />
             <Typography variant="body1">Cart count: {cart?.length}</Typography>
+            <br />
+            <Button onClick={() => dispatch(logout())} variant="contained">Logout</Button>
+            <br />
             <br />
             <Link to="/cart">Go to cart</Link>
             <br />
