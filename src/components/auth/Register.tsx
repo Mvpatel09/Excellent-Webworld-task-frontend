@@ -35,7 +35,7 @@ const Register = () => {
 
     return (
         <Container maxWidth="sm">
-            <Typography variant="h1" gutterBottom>Register</Typography>
+            <Typography variant="h4" gutterBottom>Register</Typography>
             <form onSubmit={formik.handleSubmit}>
                 <Input
                     fullWidth

@@ -37,7 +37,7 @@ const Login = () => {
 
     return (
         <Container maxWidth="sm">
-            <Typography variant="h1" gutterBottom>Login</Typography>
+            <Typography variant="h4" gutterBottom>Login</Typography>
             <form onSubmit={formik.handleSubmit}>
                 <Input
                     fullWidth
